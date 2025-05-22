@@ -1,0 +1,338 @@
+/* Enhanced Arabic Language Support for Roomaity */
+
+/* RTL Layout Improvements */
+[dir="rtl"] {
+  text-align: right;
+  font-family: 'Tajawal', sans-serif;
+  letter-spacing: 0; /* Remove letter spacing for Arabic */
+}
+
+/* Enhanced Typography for Arabic */
+[dir="rtl"] h1, 
+[dir="rtl"] h2, 
+[dir="rtl"] h3, 
+[dir="rtl"] h4, 
+[dir="rtl"] h5, 
+[dir="rtl"] h6 {
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+[dir="rtl"] body {
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Improved Font Sizes for Arabic */
+[dir="rtl"] .hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+[dir="rtl"] .hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+[dir="rtl"] .section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+[dir="rtl"] .card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Enhanced Navbar RTL Adjustments */
+[dir="rtl"] .navbar-nav {
+  padding-right: 0;
+}
+
+[dir="rtl"] .nav-item {
+  margin-right: var(--space-lg);
+  margin-left: 0;
+}
+
+[dir="rtl"] .ml-auto {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+[dir="rtl"] .mr-auto {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+/* Improved Form Elements RTL */
+[dir="rtl"] .input-group-prepend {
+  order: 1;
+}
+
+[dir="rtl"] .input-group-text {
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  border-left: 0;
+  border-right: 1px solid var(--medium-gray);
+}
+
+[dir="rtl"] .input-group .form-control {
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  text-align: right;
+}
+
+[dir="rtl"] .form-control {
+  text-align: right;
+}
+
+[dir="rtl"] .form-check-input {
+  margin-left: 0;
+  margin-right: -1.25rem;
+}
+
+[dir="rtl"] .form-check-label {
+  padding-left: 0;
+  padding-right: 1.25rem;
+}
+
+/* Enhanced Cards and Content RTL */
+[dir="rtl"] .card-location i,
+[dir="rtl"] .card-amenity i {
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+[dir="rtl"] .testimonial-avatar {
+  margin-left: var(--space-md);
+  margin-right: 0;
+}
+
+[dir="rtl"] .feature-icon,
+[dir="rtl"] .step-number {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Improved Margin and Padding RTL Flips */
+[dir="rtl"] .ml-1 { margin-right: var(--space-xs); margin-left: 0; }
+[dir="rtl"] .ml-2 { margin-right: var(--space-sm); margin-left: 0; }
+[dir="rtl"] .ml-3 { margin-right: var(--space-md); margin-left: 0; }
+[dir="rtl"] .ml-4 { margin-right: var(--space-lg); margin-left: 0; }
+[dir="rtl"] .ml-5 { margin-right: var(--space-xl); margin-left: 0; }
+
+[dir="rtl"] .mr-1 { margin-left: var(--space-xs); margin-right: 0; }
+[dir="rtl"] .mr-2 { margin-left: var(--space-sm); margin-right: 0; }
+[dir="rtl"] .mr-3 { margin-left: var(--space-md); margin-right: 0; }
+[dir="rtl"] .mr-4 { margin-left: var(--space-lg); margin-right: 0; }
+[dir="rtl"] .mr-5 { margin-left: var(--space-xl); margin-right: 0; }
+
+[dir="rtl"] .pl-1 { padding-right: var(--space-xs); padding-left: 0; }
+[dir="rtl"] .pl-2 { padding-right: var(--space-sm); padding-left: 0; }
+[dir="rtl"] .pl-3 { padding-right: var(--space-md); padding-left: 0; }
+[dir="rtl"] .pl-4 { padding-right: var(--space-lg); padding-left: 0; }
+[dir="rtl"] .pl-5 { padding-right: var(--space-xl); padding-left: 0; }
+
+[dir="rtl"] .pr-1 { padding-left: var(--space-xs); padding-right: 0; }
+[dir="rtl"] .pr-2 { padding-left: var(--space-sm); padding-right: 0; }
+[dir="rtl"] .pr-3 { padding-left: var(--space-md); padding-right: 0; }
+[dir="rtl"] .pr-4 { padding-left: var(--space-lg); padding-right: 0; }
+[dir="rtl"] .pr-5 { padding-left: var(--space-xl); padding-right: 0; }
+
+/* Enhanced Text Alignment RTL */
+[dir="rtl"] .text-left { text-align: right !important; }
+[dir="rtl"] .text-right { text-align: left !important; }
+
+/* Enhanced Float RTL */
+[dir="rtl"] .float-left { float: right !important; }
+[dir="rtl"] .float-right { float: left !important; }
+
+/* Enhanced Language Switcher */
+.language-switcher {
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-md);
+  background-color: var(--light-gray);
+  transition: background-color var(--transition-fast);
+  display: flex;
+  align-items: center;
+}
+
+.language-switcher:hover {
+  background-color: var(--medium-gray);
+}
+
+[dir="rtl"] .language-switcher i {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+/* Fix for Font Awesome icons in RTL */
+[dir="rtl"] .fa,
+[dir="rtl"] .fas,
+[dir="rtl"] .far,
+[dir="rtl"] .fab {
+  display: inline-block;
+}
+
+/* Enhanced Dropdown Menus for RTL */
+[dir="rtl"] .dropdown-menu {
+  text-align: right;
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .dropdown-item {
+  text-align: right;
+}
+
+/* Enhanced Buttons for RTL */
+[dir="rtl"] .btn-group > .btn:not(:last-child):not(.dropdown-toggle) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+}
+
+[dir="rtl"] .btn-group > .btn:not(:first-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md);
+}
+
+/* Enhanced List Groups for RTL */
+[dir="rtl"] .list-group {
+  padding-right: 0;
+}
+
+/* Enhanced Pagination for RTL */
+[dir="rtl"] .pagination {
+  padding-right: 0;
+}
+
+/* Enhanced Modal Dialogs for RTL */
+[dir="rtl"] .modal-header .close {
+  margin: -1rem auto -1rem -1rem;
+}
+
+/* Enhanced Alerts for RTL */
+[dir="rtl"] .alert-dismissible {
+  padding-right: 1.25rem;
+  padding-left: 4rem;
+}
+
+[dir="rtl"] .alert-dismissible .close {
+  left: 0;
+  right: auto;
+}
+
+/* Enhanced Breadcrumbs for RTL */
+[dir="rtl"] .breadcrumb-item + .breadcrumb-item::before {
+  padding-right: 0;
+  padding-left: 0.5rem;
+}
+
+[dir="rtl"] .breadcrumb-item + .breadcrumb-item {
+  padding-right: 0.5rem;
+  padding-left: 0;
+}
+
+/* Enhanced Tables for RTL */
+[dir="rtl"] .table th,
+[dir="rtl"] .table td {
+  text-align: right;
+}
+
+/* Enhanced Progress Bars for RTL */
+[dir="rtl"] .progress-bar {
+  float: right;
+}
+
+/* Enhanced Tooltips for RTL */
+[dir="rtl"] .tooltip {
+  text-align: right;
+}
+
+/* Enhanced Popovers for RTL */
+[dir="rtl"] .popover {
+  text-align: right;
+}
+
+/* Enhanced Carousel Controls for RTL */
+[dir="rtl"] .carousel-control-prev {
+  right: 0;
+  left: auto;
+}
+
+[dir="rtl"] .carousel-control-next {
+  left: 0;
+  right: auto;
+}
+
+/* Enhanced Input Groups for RTL */
+[dir="rtl"] .input-group > .input-group-prepend > .btn,
+[dir="rtl"] .input-group > .input-group-prepend > .input-group-text,
+[dir="rtl"] .input-group > .input-group-append:not(:last-child) > .btn,
+[dir="rtl"] .input-group > .input-group-append:not(:last-child) > .input-group-text,
+[dir="rtl"] .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+[dir="rtl"] .input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+}
+
+[dir="rtl"] .input-group > .input-group-append > .btn,
+[dir="rtl"] .input-group > .input-group-append > .input-group-text,
+[dir="rtl"] .input-group > .input-group-prepend:not(:first-child) > .btn,
+[dir="rtl"] .input-group > .input-group-prepend:not(:first-child) > .input-group-text,
+[dir="rtl"] .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+[dir="rtl"] .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md);
+}
+
+/* Enhanced Flex Direction for RTL */
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse !important;
+}
+
+[dir="rtl"] .justify-content-start {
+  justify-content: flex-end !important;
+}
+
+[dir="rtl"] .justify-content-end {
+  justify-content: flex-start !important;
+}
+
+/* Enhanced Text Direction for RTL */
+[dir="rtl"] .text-direction {
+  direction: rtl !important;
+}
+
+/* Enhanced Search Box for RTL */
+[dir="rtl"] .search-box .search-input {
+  padding-right: 15px;
+  padding-left: 40px;
+}
+
+[dir="rtl"] .search-box .search-icon {
+  right: auto;
+  left: 15px;
+}
+
+/* Enhanced Mobile Navigation for RTL */
+@media (max-width: 767px) {
+  [dir="rtl"] .mobile-bottom-nav {
+    flex-direction: row-reverse;
+  }
+  
+  [dir="rtl"] .navbar-toggler {
+    margin-right: auto;
+    margin-left: 0;
+  }
+}

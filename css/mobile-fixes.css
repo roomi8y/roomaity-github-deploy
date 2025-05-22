@@ -1,0 +1,382 @@
+/* Additional Mobile Fixes for Roomaity Platform */
+
+/* Fix for gender selection on mobile */
+@media (max-width: 767px) {
+  .gender-selection-container {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .gender-selection-buttons {
+    display: flex;
+    flex-direction: row; /* Keep buttons side by side on mobile */
+    gap: 10px;
+  }
+  
+  .gender-selection-buttons .btn {
+    flex: 1;
+    padding: 12px 8px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .gender-selection-buttons .btn i {
+    margin-left: 5px;
+    font-size: 16px;
+  }
+  
+  /* Ensure proper spacing in RTL layout */
+  html[dir="rtl"] .gender-selection-buttons .btn i {
+    margin-right: 0;
+    margin-left: 5px;
+  }
+}
+
+/* Fix for messy card layouts on mobile */
+@media (max-width: 767px) {
+  .card {
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  .card-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .card-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  
+  .card-location {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  
+  .card-amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .card-amenity {
+    font-size: 12px;
+    padding: 4px 8px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .card-amenity i {
+    margin-right: 4px;
+  }
+  
+  /* Ensure proper spacing in RTL layout */
+  html[dir="rtl"] .card-amenity i {
+    margin-right: 0;
+    margin-left: 4px;
+  }
+  
+  .row {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  
+  .col-md-6, .col-lg-4 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* Fix for search filters on mobile */
+@media (max-width: 767px) {
+  .filter-sidebar {
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+  
+  .filter-title {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  .filter-group {
+    margin-bottom: 15px;
+  }
+  
+  .filter-label {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .filter-option {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .filter-option label {
+    margin-bottom: 0;
+    margin-left: 5px;
+  }
+  
+  /* Ensure proper spacing in RTL layout */
+  html[dir="rtl"] .filter-option label {
+    margin-left: 0;
+    margin-right: 5px;
+  }
+  
+  .price-range {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .price-input {
+    flex: 1;
+    height: 40px;
+  }
+  
+  .price-separator {
+    font-size: 14px;
+    color: #6c757d;
+  }
+}
+
+/* Fix for navbar on mobile */
+@media (max-width: 767px) {
+  .navbar {
+    padding: 10px 15px;
+    height: 60px;
+  }
+  
+  .navbar-brand img {
+    height: 30px;
+  }
+  
+  .navbar-toggler {
+    padding: 6px;
+    font-size: 20px;
+  }
+  
+  .navbar-collapse {
+    padding: 15px;
+  }
+  
+  .nav-item {
+    margin-bottom: 10px;
+  }
+  
+  .nav-link {
+    padding: 8px 0;
+    font-size: 16px;
+  }
+  
+  .navbar-nav .btn {
+    margin-top: 5px;
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+  
+  .language-switcher {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+/* Fix for mobile bottom navigation */
+@media (max-width: 767px) {
+  .mobile-bottom-nav {
+    height: 60px;
+    padding: 5px 0;
+  }
+  
+  .mobile-nav-item {
+    font-size: 10px;
+  }
+  
+  .mobile-nav-item i {
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+  
+  body {
+    padding-bottom: 60px;
+  }
+}
+
+/* Fix for pagination on mobile */
+@media (max-width: 767px) {
+  .pagination {
+    margin-top: 20px;
+  }
+  
+  .page-item .page-link {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Fix for search header on mobile */
+@media (max-width: 767px) {
+  .search-header {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .search-title {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .search-subtitle {
+    font-size: 14px;
+    color: #6c757d;
+  }
+}
+
+/* Fix for sort options on mobile */
+@media (max-width: 767px) {
+  .d-flex.justify-content-between.align-items-center {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  
+  .search-result-count {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .sort-options {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .sort-label {
+    margin-right: 10px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  
+  /* Ensure proper spacing in RTL layout */
+  html[dir="rtl"] .sort-label {
+    margin-right: 0;
+    margin-left: 10px;
+  }
+  
+  .sort-select {
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+/* Fix for section spacing on mobile */
+@media (max-width: 767px) {
+  .section {
+    padding: 30px 0;
+  }
+  
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .search-container {
+    margin-top: 70px;
+    padding: 15px 0;
+  }
+}
+
+/* Fix for form elements on mobile */
+@media (max-width: 767px) {
+  .form-control {
+    height: 40px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  
+  .btn {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+  
+  .btn-block {
+    width: 100%;
+  }
+}
+
+/* Fix for RTL specific issues on mobile */
+@media (max-width: 767px) {
+  html[dir="rtl"] .navbar-toggler {
+    margin-right: auto;
+    margin-left: 0;
+  }
+  
+  html[dir="rtl"] .navbar-collapse {
+    transform: translateX(100%);
+  }
+  
+  html[dir="rtl"] .navbar-collapse.show {
+    transform: translateX(0);
+  }
+}
+
+/* Fix for touch targets on mobile */
+@media (max-width: 767px) {
+  button, 
+  .btn, 
+  .nav-link, 
+  .form-control, 
+  input[type="checkbox"], 
+  input[type="radio"],
+  .card-amenity,
+  .filter-option,
+  .page-link {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  input[type="checkbox"], 
+  input[type="radio"] {
+    transform: scale(1.2);
+  }
+}
+
+/* Fix for content spacing on mobile */
+@media (max-width: 767px) {
+  .mb-4 {
+    margin-bottom: 15px !important;
+  }
+  
+  .mt-3 {
+    margin-top: 10px !important;
+  }
+  
+  .py-5 {
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+  }
+  
+  .px-4 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}

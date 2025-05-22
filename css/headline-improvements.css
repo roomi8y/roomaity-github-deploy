@@ -1,0 +1,132 @@
+/* Enhanced Headline Styles for Roomaity Platform */
+
+/* Main Hero Title */
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+    text-align: right;
+}
+
+[dir="rtl"] .hero-title {
+    text-align: right;
+}
+
+.hero-title .text-primary {
+    color: var(--primary-color) !important;
+    font-weight: 700;
+}
+
+/* Search Header Section */
+.search-header {
+    margin-bottom: 2rem;
+    text-align: right;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Search Subtitle */
+.search-subtitle {
+    font-size: 1.1rem;
+    color: var(--medium-dark-gray);
+    margin-bottom: 0;
+}
+
+/* Gender Selection Container */
+.gender-selection-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.gender-selection-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.gender-selection-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.gender-selection-buttons .btn {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.gender-selection-buttons .btn i {
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Filter Section */
+.filter-sidebar {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.filter-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+    border-bottom: 2px solid var(--light-gray);
+    padding-bottom: 0.75rem;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 767px) {
+    .hero-title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    
+    .search-header {
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .search-subtitle {
+        font-size: 1rem;
+    }
+    
+    .gender-selection-container {
+        padding: 1rem;
+    }
+    
+    .gender-selection-label {
+        text-align: center;
+    }
+    
+    .gender-selection-buttons {
+        flex-direction: row;
+    }
+    
+    .gender-selection-buttons .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .filter-sidebar {
+        padding: 1rem;
+    }
+    
+    .filter-title {
+        font-size: 1.1rem;
+    }
+}

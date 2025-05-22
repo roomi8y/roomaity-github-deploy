@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>روميتي - ابحث عن شريك السكن المثالي</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/mobile-enhanced.css">
+    <link rel="stylesheet" href="css/arabic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/logo/roomaity-icon.svg">
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header class="navbar fixed-top">
+        <div class="container">
+            <a href="index-ar.html" class="navbar-brand">
+                <img src="images/logo/roomaity-logo-horizontal.svg" alt="شعار روميتي" height="40">
+            </a>
+            
+            <button class="navbar-toggler d-lg-none" type="button" id="navbarToggler" aria-label="القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav mr-auto d-flex flex-row">
+                    <li class="nav-item">
+                        <a href="index-ar.html" class="nav-link active">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="search-ar.html" class="nav-link">ابحث عن شريك سكن</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="list-room-ar.html" class="nav-link">أضف غرفتك</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about-ar.html" class="nav-link">كيف يعمل</a>
+                    </li>
+                    <li class="nav-item mr-3">
+                        <a href="login-ar.html" class="btn btn-outline-primary">تسجيل الدخول</a>
+                    </li>
+                    <li class="nav-item mr-2">
+                        <a href="register-ar.html" class="btn btn-primary">التسجيل</a>
+                    </li>
+                    <li class="nav-item mr-2">
+                        <button class="language-switcher" id="languageToggle">
+                            <i class="fas fa-globe"></i> English
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav d-md-none">
+        <a href="index-ar.html" class="mobile-nav-item active">
+            <i class="fas fa-home"></i>
+            <span>الرئيسية</span>
+        </a>
+        <a href="search-ar.html" class="mobile-nav-item">
+            <i class="fas fa-search"></i>
+            <span>البحث</span>
+        </a>
+        <a href="list-room-ar.html" class="mobile-nav-item">
+            <i class="fas fa-plus-circle"></i>
+            <span>إضافة</span>
+        </a>
+        <a href="messages-ar.html" class="mobile-nav-item">
+            <i class="fas fa-comments"></i>
+            <span>الرسائل</span>
+        </a>
+        <a href="profile-ar.html" class="mobile-nav-item">
+            <i class="fas fa-user"></i>
+            <span>حسابي</span>
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">ابحث عن شريك السكن المثالي في المملكة العربية السعودية</h1>
+                    <p class="hero-subtitle">تواصل مع شركاء سكن متوافقين أو ابحث عن الغرفة المثالية في بيئة آمنة ومناسبة ثقافياً.</p>
+                    
+                    <!-- Gender Selection Tabs -->
+                    <div class="gender-tabs mt-4">
+                        <ul class="nav nav-pills nav-fill mb-3" id="genderTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="male-tab" data-toggle="pill" data-target="#male-content" type="button" role="tab" aria-controls="male-content" aria-selected="true">
+                                    <i class="fas fa-male text-male"></i> قسم الرجال
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="female-tab" data-toggle="pill" data-target="#female-content" type="button" role="tab" aria-controls="female-content" aria-selected="false">
+                                    <i class="fas fa-female text-female"></i> قسم النساء
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Search Form -->
+                    <div class="tab-content" id="genderTabsContent">
+                        <!-- Male Content -->
+                        <div class="tab-pane fade show active" id="male-content" role="tabpanel" aria-labelledby="male-tab">
+                            <form action="search-ar.html" class="search-form" method="get">
+                                <input type="hidden" name="gender" value="male">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                        </div>
+                                        <select class="form-control" name="city" required>
+                                            <option value="" selected disabled>اختر المدينة</option>
+                                            <option value="Riyadh">الرياض</option>
+                                            <option value="Jeddah">جدة</option>
+                                            <option value="Dammam">الدمام</option>
+                                            <option value="Mecca">مكة</option>
+                                            <option value="Medina">المدينة</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-money-bill-wave"></i></span>
+                                        </div>
+                                        <select class="form-control" name="price_range">
+                                            <option value="" selected disabled>نطاق السعر</option>
+                                            <option value="0-1000">أقل من 1,000 ريال</option>
+                                            <option value="1000-2000">1,000 - 2,000 ريال</option>
+                                            <option value="2000-3000">2,000 - 3,000 ريال</option>
+                                            <option value="3000-4000">3,000 - 4,000 ريال</option>
+                                            <option value="4000+">أكثر من 4,000 ريال</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">ابحث عن شريك سكن</button>
+                            </form>
+                        </div>
+                        
+                        <!-- Female Content -->
+                        <div class="tab-pane fade" id="female-content" role="tabpanel" aria-labelledby="female-tab">
+                            <form action="search-ar.html" class="search-form" method="get">
+                                <input type="hidden" name="gender" value="female">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                        </div>
+                                        <select class="form-control" name="city" required>
+                                            <option value="" selected disabled>اختر المدينة</option>
+                                            <option value="Riyadh">الرياض</option>
+                                            <option value="Jeddah">جدة</option>
+                                            <option value="Dammam">الدمام</option>
+                                            <option value="Mecca">مكة</option>
+                                            <option value="Medina">المدينة</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-money-bill-wave"></i></span>
+                                        </div>
+                                        <select class="form-control" name="price_range">
+                                            <option value="" selected disabled>نطاق السعر</option>
+                                            <option value="0-1000">أقل من 1,000 ريال</option>
+                                            <option value="1000-2000">1,000 - 2,000 ريال</option>
+                                            <option value="2000-3000">2,000 - 3,000 ريال</option>
+                                            <option value="3000-4000">3,000 - 4,000 ريال</option>
+                                            <option value="4000+">أكثر من 4,000 ريال</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">ابحث عن شريكة سكن</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <img src="images/illustrations/roommate-hero.jpg" alt="ابحث عن شركاء سكن في السعودية" class="img-fluid rounded hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">لماذا تختار روميتي؟</h2>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3 class="feature-title">آمن ومضمون</h3>
+                        <p class="feature-text">ملفات شخصية موثقة ورسائل آمنة لضمان سلامتك وخصوصيتك.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="feature-title">مناسب ثقافياً</h3>
+                        <p class="feature-text">أقسام منفصلة للجنسين وميزات مصممة خصيصاً للاحتياجات الثقافية السعودية.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="feature-title">تطابق ذكي</h3>
+                        <p class="feature-text">فلاتر متقدمة لمساعدتك في العثور على شريك السكن المثالي بناءً على تفضيلاتك.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roommate Profiles Section -->
+    <section class="roommate-profiles py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">ابحث عن شريك السكن المثالي</h2>
+            
+            <!-- Gender Tabs for Profiles -->
+            <ul class="nav nav-pills nav-justified mb-4" id="profilesTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="male-profiles-tab" data-toggle="pill" data-target="#male-profiles" type="button" role="tab" aria-controls="male-profiles" aria-selected="true">
+                        <i class="fas fa-male text-male"></i> شركاء سكن (رجال)
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="female-profiles-tab" data-toggle="pill" data-target="#female-profiles" type="button" role="tab" aria-controls="female-profiles" aria-selected="false">
+                        <i class="fas fa-female text-female"></i> شريكات سكن (نساء)
+                    </button>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="profilesTabsContent">
+                <!-- Male Profiles -->
+                <div class="tab-pane fade show active" id="male-profiles" role="tabpanel" aria-labelledby="male-profiles-tab">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="images/illustrations/profile1.jpg" class="card-img-top" alt="أحمد">
+                                <div class="card-body">
+                                    <h5 class="card-title">أحمد، 28</h5>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> الرياض</p>
+                                    <p class="card-text">موظف يبحث عن شريك سكن هادئ. غير مدخن، نظيف ومنظم.</p>
+                                    <div class="card-amenities">
+                                        <span class="card-amenity"><i class="fas fa-ban"></i> ممنوع التدخين</span>
+                                        <span class="card-amenity"><i class="fas fa-briefcase"></i> موظف</span>
+                                    </div>
+                                    <a href="profile-details-ar.html" class="btn btn-outline-primary btn-block mt-3">عرض الملف الشخصي</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="images/illustrations/profile2.jpg" class="card-img-top" alt="محمد">
+                                <div class="card-body">
+                                    <h5 class="card-title">محمد، 24</h5>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> جدة</p>
+                                    <p class="card-text">طالب في جامعة الملك عبد العزيز. يبحث عن شريك سكن قرب الحرم الجامعي.</p>
+                                    <div class="card-amenities">
+                                        <span class="card-amenity"><i class="fas fa-graduation-cap"></i> طالب</span>
+                                        <span class="card-amenity"><i class="fas fa-book"></i> دراسة هادئة</span>
+                                    </div>
+                                    <a href="profile-details-ar.html" class="btn btn-outline-primary btn-block mt-3">عرض الملف الشخصي</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="images/illustrations/profile3.jpg" class="card-img-top" alt="خالد">
+                                <div class="card-body">
+                                    <h5 class="card-title">خالد، 30</h5>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> الدمام</p>
+                                    <p class="card-text">مهندس يعمل في صناعة النفط. نظيف، محترم، واجتماعي.</p>
+                                    <div class="card-amenities">
+                                        <span class="card-amenity"><i class="fas fa-hard-hat"></i> مهندس</span>
+                                        <span class="card-amenity"><i class="fas fa-users"></i> اجتماعي</span>
+                                    </div>
+                                    <a href="profile-details-ar.html" class="btn btn-outline-primary btn-block mt-3">عرض الملف الشخصي</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-3">
+                        <a href="profiles-ar.html?gender=male" class="btn btn-primary">عرض جميع الملفات الشخصية للرجال</a>
+                    </div>
+                </div>
+                
+                <!-- Female Profiles -->
+                <div class="tab-pane fade" id="female-profiles" role="tabpanel" aria-labelledby="female-profiles-tab">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="images/illustrations/profile4.jpg" class="card-img-top" alt="سارة">
+                                <div class="card-body">
+                                    <h5 class="card-title">سارة، 26</h5>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> الرياض</p>
+                                    <p class="card-text">طالبة طب تبحث عن شريكة سكن. نظيفة، منظمة، ومجتهدة.</p>
+                                    <div class="card-amenities">
+                                        <span class="card-amenity"><i class="fas fa-user-md"></i> طب</span>
+                                        <span class="card-amenity"><i class="fas fa-book"></i> مجتهدة</span>
+                                    </div>
+                                    <a href="profile-details-ar.html" class="btn btn-outline-primary btn-block mt-3">عرض الملف الشخصي</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="images/illustrations/profile5.jpg" class="card-img-top" alt="نورة">
+                                <div class="card-body">
+                                    <h5 class="card-title">نورة، 29</h5>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> جدة</p>
+                                    <p class="card-text">موظفة في قطاع المالية. تبحث عن شريكة سكن مسؤولة.</p>
+                                    <div class="card-amenities">
+                                        <span class="card-amenity"><i class="fas fa-briefcase"></i> موظفة</span>
+                                        <span class="card-amenity"><i class="fas fa-chart-line"></i> مالية</span>
+                                    </div>
+                                    <a href="profile-details-ar.html" class="btn btn-outline-primary btn-block mt-3">عرض الملف الشخصي</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="images/illustrations/profile6.jpg" class="card-img-top" alt="أمل">
+                                <div class="card-body">
+                                    <h5 class="card-title">أمل، 25</h5>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> مكة</p>
+                                    <p class="card-text">معلمة تبحث عن شريكة سكن هادئة ومحترمة. تستمتع بالقراءة والطبخ.</p>
+                                    <div class="card-amenities">
+                                        <span class="card-amenity"><i class="fas fa-chalkboard-teacher"></i> معلمة</span>
+                                        <span class="card-amenity"><i class="fas fa-utensils"></i> طبخ</span>
+                                    </div>
+                                    <a href="profile-details-ar.html" class="btn btn-outline-primary btn-block mt-3">عرض الملف الشخصي</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-3">
+                        <a href="profiles-ar.html?gender=female" class="btn btn-primary">عرض جميع الملفات الشخصية للنساء</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">كيف يعمل</h2>
+            
+            <div class="row">
+                <div class="col-6 col-md-3 mb-4">
+                    <div class="step-card">
+                        <div class="step-number">١</div>
+                        <h3 class="step-title">إنشاء ملف شخصي</h3>
+                        <p class="step-text">سجل وأنشئ ملفك الشخصي المفصل مع تفضيلاتك ومتطلباتك.</p>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3 mb-4">
+                    <div class="step-card">
+                        <div class="step-number">٢</div>
+                        <h3 class="step-title">أضف أو ابحث</h3>
+                        <p class="step-text">أضف غرفتك أو ابحث عن شركاء السكن المناسبين في موقعك المفضل.</p>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3 mb-4">
+                    <div class="step-card">
+                        <div class="step-number">٣</div>
+                        <h3 class="step-title">تواصل</h3>
+                        <p class="step-text">راسل شركاء السكن المحتملين بأمان من خلال منصتنا.</p>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3 mb-4">
+                    <div class="step-card">
+                        <div class="step-number">٤</div>
+                        <h3 class="step-title">انتقل للسكن</h3>
+                        <p class="step-text">أكمل التفاصيل واستمتع بترتيب معيشتك الجديد!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="about-ar.html" class="btn btn-outline-primary">اعرف المزيد</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Listings Section -->
+    <section class="featured-listings py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">الغرف المتاحة</h2>
+            
+            <!-- Gender Tabs for Listings -->
+            <ul class="nav nav-pills nav-justified mb-4" id="listingsTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="male-listings-tab" data-toggle="pill" data-target="#male-listings" type="button" role="tab" aria-controls="male-listings" aria-selected="true">
+                        <i class="fas fa-male text-male"></i> غرف للرجال
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="female-listings-tab" data-toggle="pill" data-target="#female-listings" type="button" role="tab" aria-controls="female-listings" aria-selected="false">
+                        <i class="fas fa-female text-female"></i> غرف للنساء
+                    </button>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="listingsTabsContent">
+                <!-- Male Listings -->
+                <div class="tab-pane fade show active" id="male-listings" role="tabpanel" aria-labelledby="male-listings-tab">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="listing-card">
+                                <div class="badge badge-male position-absolute" style="top: 10px; left: 10px;">
+                                    للرجال
+                                </div>
+                                <img src="images/illustrations/room1.jpg" class="card-img-top" alt="غرفة حديثة في الرياض">
+                                <div class="card-body">
+                                    <h5 class="card-title">غرفة حديثة في الرياض</h5>
+                                    <p class="card-price">2,500 ريال/شهر</p>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> العليا، الرياض</p>
+                                    <div class="card-amenities">
+                                        <span class="card-amenity"><i class="fas fa-wifi"></i> واي فاي</span>
+                                        <span class="card-amenity"><i class="fas fa-snowflake"></i> تكييف</span>
+                                        <span class="card-amenity"><i class="fas fa-bath"></i> حمام خاص</span>
+                                    </div>
+                                    <a href="room-details-ar.html" class="btn btn-outline-primary btn-block mt-3">عرض التفاصيل</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="listing-card">
+                                <div class="badge badge-male position-absolute" style="top: 10px; left: 10px;">
+                                    للرجال
+                                </div>
+                                <img src="images/illustrations/room2.jpg" class="card-img-top" alt="شقة واسعة في جدة">
+                                <div class="card-body">
+                                    <h5 class="card-title">شقة واسعة في جدة</h5>
+                                    <p class="card-price">3,200 ريال/شهر</p>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> الحمراء، جدة</p>
+                                    <div class="card-amenities">
+                                        <span class="card-amenity"><i class="fas fa-wifi"></i> واي فاي</span>
+                                        <span class="card-amenity"><i class="fas fa-snowflake"></i> تكييف</span>
+                                        <span class="card-amenity"><i class="fas fa-car"></i> موقف سيارات</span>
+                                    </div>
+                                    <a href="room-details-ar.html" class="btn btn-outline-primary btn-block mt-3">عرض التفاصيل</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="listing-card">
+                                <div class="badge badge-male position-absolute" style="top: 10px; left: 10px;">
+                                    للرجال
+                                </div>
+                                <img src="images/illustrations/room3.jpg" class="card-img-top" alt="غرفة مريحة في الدمام">
+                                <div class="card-body">
+                                    <h5 class="card-title">غرفة مريحة في الدمام</h5>
+                                    <p class="card-price">1,800 ريال/شهر</p>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> الفيصلية، الدمام</p>
+                                    <div class="card-amenities">
+                                        <span class="card-amenity"><i class="fas fa-wifi"></i> واي فاي</span>
+                                        <span class="card-amenity"><i class="fas fa-utensils"></i> مطبخ</span>
+                                        <span class="card-amenity"><i class="fas fa-tshirt"></i> غسيل</span>
+                                    </div>
+                                    <a href="room-details-ar.html" class="btn btn-outline-primary btn-block mt-3">عرض التفاصيل</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-3">
+                        <a href="search-ar.html?gender=male" class="btn btn-primary">عرض جميع الغرف للرجال</a>
+                    </div>
+                </div>
+                
+                <!-- Female Listings -->
+                <div class="tab-pane fade" id="female-listings" role="tabpanel" aria-labelledby="female-listings-tab">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="listing-card">
+                                <div class="badge badge-female position-absolute" style="top: 10px; left: 10px;">
+                                    للنساء
+                                </div>
+                                <img src="images/illustrations/room4.jpg" class="card-img-top" alt="غرفة فاخرة في الرياض">
+                                <div class="card-body">
+                                    <h5 class="card-title">غرفة فاخرة في الرياض</h5>
+                                    <p class="card-price">2,800 ريال/شهر</p>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> النخيل، الرياض</p>
+                                    <div class="card-amenities">
+                                        <span class="card-amenity"><i class="fas fa-wifi"></i> واي فاي</span>
+                                        <span class="card-amenity"><i class="fas fa-snowflake"></i> تكييف</span>
+                                        <span class="card-amenity"><i class="fas fa-swimming-pool"></i> مسبح</span>
+                                    </div>
+                                    <a href="room-details-ar.html" class="btn btn-outline-primary btn-block mt-3">عرض التفاصيل</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="listing-card">
+                                <div class="badge badge-female position-absolute" style="top: 10px; left: 10px;">
+                                    للنساء
+                                </div>
+                                <img src="images/illustrations/room5.jpg" class="card-img-top" alt="شقة أنيقة في جدة">
+                                <div class="card-body">
+                                    <h5 class="card-title">شقة أنيقة في جدة</h5>
+                                    <p class="card-price">3,000 ريال/شهر</p>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> الروضة، جدة</p>
+                                    <div class="card-amenities">
+                                        <span class="card-amenity"><i class="fas fa-wifi"></i> واي فاي</span>
+                                        <span class="card-amenity"><i class="fas fa-snowflake"></i> تكييف</span>
+                                        <span class="card-amenity"><i class="fas fa-dumbbell"></i> صالة رياضية</span>
+                                    </div>
+                                    <a href="room-details-ar.html" class="btn btn-outline-primary btn-block mt-3">عرض التفاصيل</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="listing-card">
+                                <div class="badge badge-female position-absolute" style="top: 10px; left: 10px;">
+                                    للنساء
+                                </div>
+                                <img src="images/illustrations/room6.jpg" class="card-img-top" alt="غرفة مريحة في مكة">
+                                <div class="card-body">
+                                    <h5 class="card-title">غرفة مريحة في مكة</h5>
+                                    <p class="card-price">2,200 ريال/شهر</p>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> العزيزية، مكة</p>
+                                    <div class="card-amenities">
+                                        <span class="card-amenity"><i class="fas fa-wifi"></i> واي فاي</span>
+                                        <span class="card-amenity"><i class="fas fa-utensils"></i> مطبخ</span>
+                                        <span class="card-amenity"><i class="fas fa-bath"></i> حمام خاص</span>
+                                    </div>
+                                    <a href="room-details-ar.html" class="btn btn-outline-primary btn-block mt-3">عرض التفاصيل</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-3">
+                        <a href="search-ar.html?gender=female" class="btn btn-primary">عرض جميع الغرف للنساء</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">ماذا يقول مستخدمونا</h2>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar">
+                            <img src="images/illustrations/testimonial1.jpg" alt="محمد">
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"وجدت شريك السكن المثالي خلال أسبوع! تركيز المنصة على الاعتبارات الثقافية جعلني أشعر بالراحة طوال العملية."</p>
+                            <p class="testimonial-author">- محمد، الرياض</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar">
+                            <img src="images/illustrations/testimonial2.jpg" alt="فاطمة">
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="testimonial-text">"كطالبة، كانت السلامة أولويتي القصوى. وفرت هذه المنصة طريقة آمنة للعثور على شريكة سكن مناسبة تشاركني قيمي."</p>
+                            <p class="testimonial-author">- فاطمة، جدة</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar">
+                            <img src="images/illustrations/testimonial3.jpg" alt="أحمد">
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"أضفت غرفتي الإضافية وتلقيت العديد من الاستفسارات من شركاء سكن متوافقين. ساعدني نظام التصفية في العثور على شخص كان مناسباً تماماً."</p>
+                            <p class="testimonial-author">- أحمد، الدمام</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <h2 class="cta-title">هل أنت مستعد للعثور على شريك السكن المثالي؟</h2>
+                    <p class="cta-text">انضم إلى آلاف المستخدمين الذين وجدوا بنجاح شركاء سكن متوافقين في المملكة العربية السعودية.</p>
+                </div>
+                <div class="col-lg-4 text-lg-left">
+                    <a href="register-ar.html" class="btn btn-primary btn-lg">سجل الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="images/logo/roomaity-logo-horizontal.svg" alt="روميتي" height="40" class="mb-3">
+                    <p>المنصة الرائدة للعثور على شركاء سكن في المملكة العربية السعودية مع ميزات مصممة خصيصاً للاحتياجات الثقافية المحلية.</p>
+                    <div class="mt-3">
+                        <a href="#" class="ml-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="ml-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="ml-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-2 mb-4">
+                    <h5 class="footer-title">روابط سريعة</h5>
+                    <ul class="footer-links">
+                        <li><a href="index-ar.html">الرئيسية</a></li>
+                        <li><a href="search-ar.html">ابحث عن شريك سكن</a></li>
+                        <li><a href="list-room-ar.html">أضف غرفتك</a></li>
+                        <li><a href="about-ar.html">كيف يعمل</a></li>
+                        <li><a href="contact-ar.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">موارد</h5>
+                    <ul class="footer-links">
+                        <li><a href="blog-ar.html">المدونة</a></li>
+                        <li><a href="faq-ar.html">الأسئلة الشائعة</a></li>
+                        <li><a href="safety-tips-ar.html">نصائح السلامة</a></li>
+                        <li><a href="roommate-agreement-ar.html">اتفاقية شريك السكن</a></li>
+                        <li><a href="neighborhood-guides-ar.html">دليل الأحياء</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">اتصل بنا</h5>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope ml-2"></i> support@roomaity.sa</li>
+                        <li><i class="fas fa-phone ml-2"></i> +966 12 345 6789</li>
+                        <li><i class="fas fa-map-marker-alt ml-2"></i> الرياض، المملكة العربية السعودية</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 روميتي (Roomaity). جميع الحقوق محفوظة.</p>
+                <div class="mt-2">
+                    <a href="terms-ar.html" class="ml-3">شروط الخدمة</a>
+                    <a href="privacy-ar.html" class="ml-3">سياسة الخصوصية</a>
+                    <a href="cookies-ar.html">سياسة ملفات تعريف الارتباط</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="60px" viewBox="0 0 200 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Roomaity Logo</title>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="gradient">
+            <stop stop-color="#FF5A5F" offset="0%"></stop>
+            <stop stop-color="#FC642D" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- House Icon representing unity and sharing -->
+        <g id="House" transform="translate(10, 10)">
+            <!-- Roof -->
+            <path d="M20,0 L0,15 L5,15 L5,35 L35,35 L35,15 L40,15 L20,0 Z" fill="url(#gradient)" />
+            
+            <!-- Door -->
+            <rect x="15" y="20" width="10" height="15" fill="#484848" />
+            
+            <!-- Windows -->
+            <rect x="8" y="18" width="6" height="6" fill="#FFFFFF" />
+            <rect x="26" y="18" width="6" height="6" fill="#FFFFFF" />
+            
+            <!-- People silhouettes representing unity -->
+            <circle cx="13" cy="28" r="3" fill="#FFFFFF" />
+            <circle cx="27" cy="28" r="3" fill="#FFFFFF" />
+            <path d="M10,35 L10,31 C10,29.8954305 10.8954305,29 12,29 L14,29 C15.1045695,29 16,29.8954305 16,31 L16,35" fill="#FFFFFF" />
+            <path d="M24,35 L24,31 C24,29.8954305 24.8954305,29 26,29 L28,29 C29.1045695,29 30,29.8954305 30,31 L30,35" fill="#FFFFFF" />
+        </g>
+        
+        <!-- Text: Roomaity -->
+        <text id="Roomaity" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#484848" x="60" y="30">
+            Roomaity
+        </text>
+        
+        <!-- Text: روميتي -->
+        <text id="روميتي" font-family="Tajawal, Arial, sans-serif" font-size="18" font-weight="bold" fill="#484848" x="60" y="50">
+            روميتي
+        </text>
+    </g>
+</svg>

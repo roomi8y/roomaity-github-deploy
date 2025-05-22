@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300px" height="100px" viewBox="0 0 300 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Roomaity Logo Full</title>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="gradient">
+            <stop stop-color="#FF5A5F" offset="0%"></stop>
+            <stop stop-color="#FC642D" offset="100%"></stop>
+        </linearGradient>
+        <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="2"></feGaussianBlur>
+            <feOffset dx="0" dy="1"></feOffset>
+            <feComponentTransfer>
+                <feFuncA type="linear" slope="0.2"></feFuncA>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- House Icon representing unity and sharing -->
+        <g id="House" transform="translate(20, 15)" filter="url(#shadow)">
+            <!-- House Base -->
+            <path d="M30,25 L30,60 L0,60 L0,25 L30,25 Z" fill="#FFFFFF" />
+            
+            <!-- Roof -->
+            <path d="M15,0 L37.5,20 L-7.5,20 L15,0 Z" fill="url(#gradient)" />
+            
+            <!-- Door -->
+            <rect x="11" y="40" width="8" height="20" rx="1" fill="#484848" />
+            
+            <!-- Windows -->
+            <rect x="4" y="30" width="7" height="7" rx="1" fill="#F7F7F7" stroke="#DDDDDD" stroke-width="1" />
+            <rect x="19" y="30" width="7" height="7" rx="1" fill="#F7F7F7" stroke="#DDDDDD" stroke-width="1" />
+            
+            <!-- People silhouettes representing unity and sharing -->
+            <g id="People" transform="translate(4, 25)">
+                <!-- Person 1 -->
+                <circle cx="7" cy="3" r="3" fill="#FF5A5F" />
+                <path d="M4,10 C4,7 10,7 10,10" stroke="#FF5A5F" stroke-width="1.5" fill="none" />
+                
+                <!-- Person 2 -->
+                <circle cx="15" cy="3" r="3" fill="#FC642D" />
+                <path d="M12,10 C12,7 18,7 18,10" stroke="#FC642D" stroke-width="1.5" fill="none" />
+                
+                <!-- Connection line representing unity -->
+                <path d="M7,3 L15,3" stroke="#484848" stroke-width="0.75" stroke-dasharray="2,1" />
+            </g>
+        </g>
+        
+        <!-- Text: Roomaity -->
+        <text id="Roomaity" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#484848" x="80" y="45">
+            Roomaity
+        </text>
+        
+        <!-- Text: روميتي -->
+        <text id="روميتي" font-family="Tajawal, Arial, sans-serif" font-size="24" font-weight="bold" fill="#484848" x="80" y="75">
+            روميتي
+        </text>
+        
+        <!-- Tagline -->
+        <text id="Tagline" font-family="Arial, sans-serif" font-size="12" font-weight="normal" fill="#666666" x="80" y="95">
+            Find your perfect roommate | ابحث عن شريك السكن المثالي
+        </text>
+    </g>
+</svg>

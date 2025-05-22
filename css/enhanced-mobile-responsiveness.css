@@ -1,0 +1,190 @@
+/* Enhanced Mobile Responsiveness for Roomaity Platform */
+
+/* General Mobile Improvements */
+@media (max-width: 767px) {
+  /* Container spacing */
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  /* Body padding for fixed navbar */
+  body {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  
+  /* Header/Navbar */
+  .navbar {
+    height: 60px;
+    padding: 0.5rem;
+  }
+  
+  .navbar-brand img {
+    height: 30px;
+    max-width: 140px;
+  }
+  
+  .navbar-toggler {
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+  }
+  
+  /* Hero Section */
+  .search-container {
+    padding: 0.75rem 0;
+  }
+  
+  .search-header {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+  }
+  
+  .hero-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .search-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  /* Gender Selection */
+  .gender-selection-container {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+  }
+  
+  .gender-selection-label {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .gender-selection-buttons {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  
+  .gender-selection-buttons .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    min-width: 110px;
+  }
+  
+  /* Filter Section */
+  .filter-sidebar {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+  }
+  
+  .filter-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .filter-group {
+    margin-bottom: 1rem;
+  }
+  
+  .filter-label {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Form Elements */
+  .form-control {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    height: 40px;
+  }
+  
+  select.form-control {
+    height: 40px;
+  }
+  
+  /* Buttons */
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  /* Cards */
+  .card {
+    margin-bottom: 1rem;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+  }
+  
+  /* Mobile Bottom Navigation */
+  .mobile-bottom-nav {
+    height: 60px;
+    padding: 0.25rem 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mobile-nav-item {
+    font-size: 0.7rem;
+  }
+  
+  .mobile-nav-item i {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  /* Touch Targets */
+  .btn, 
+  .form-control,
+  .nav-link,
+  select,
+  input[type="checkbox"] + label,
+  input[type="radio"] + label {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Improved Scrolling */
+  .filter-sidebar {
+    max-height: 80vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Fix for iOS Safari 100vh issue */
+  .search-container {
+    min-height: calc(100vh - 120px);
+  }
+  
+  /* Improved tap highlight */
+  a, button, .btn, input, select, .card {
+    -webkit-tap-highlight-color: rgba(232, 62, 140, 0.1);
+  }
+}
+
+/* Small phones */
+@media (max-width: 375px) {
+  .hero-title {
+    font-size: 1.3rem;
+  }
+  
+  .gender-selection-buttons .btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+    min-width: 100px;
+  }
+  
+  .navbar-brand img {
+    height: 25px;
+    max-width: 120px;
+  }
+}

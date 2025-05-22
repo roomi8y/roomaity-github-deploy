@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>روميتي - ابحث عن شريك السكن المثالي</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/mobile-enhanced.css">
+    <link rel="stylesheet" href="css/arabic.css">
+    <link rel="stylesheet" href="css/arabic-enhanced.css">
+    <link rel="stylesheet" href="css/search-improvements.css">
+    <link rel="stylesheet" href="css/gender-separation.css">
+    <link rel="stylesheet" href="css/mobile-fixes.css">
+    <link rel="stylesheet" href="css/headline-improvements.css">
+    <link rel="stylesheet" href="css/mobile-upper-page.css">
+    <link rel="stylesheet" href="css/main-page-improvements.css">
+    <link rel="stylesheet" href="css/enhanced-mobile-responsiveness.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/logo/new/roomaity-icon.svg">
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header class="navbar fixed-top">
+        <div class="container">
+            <a href="index-ar.html" class="navbar-brand">
+                <img src="images/logo/new/roomaity-logo-horizontal.svg" alt="شعار روميتي" height="40">
+            </a>
+            
+            <button class="navbar-toggler d-lg-none" type="button" id="navbarToggler" aria-label="القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav mr-auto d-flex flex-row">
+                    <li class="nav-item">
+                        <a href="index-ar.html" class="nav-link active">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="search-ar.html" class="nav-link">ابحث عن شريك سكن</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="list-room-ar.html" class="nav-link">أضف غرفتك</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about-ar.html" class="nav-link">كيف يعمل</a>
+                    </li>
+                    <li class="nav-item mr-3">
+                        <a href="login-ar.html" class="btn btn-outline-primary">تسجيل الدخول</a>
+                    </li>
+                    <li class="nav-item mr-2">
+                        <a href="register-ar.html" class="btn btn-primary">التسجيل</a>
+                    </li>
+                    <li class="nav-item mr-2">
+                        <button class="language-switcher" id="languageToggle">
+                            <i class="fas fa-globe"></i> English
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav d-md-none">
+        <a href="index-ar.html" class="mobile-nav-item">
+            <i class="fas fa-home"></i>
+            <span>الرئيسية</span>
+        </a>
+        <a href="search-ar.html" class="mobile-nav-item active">
+            <i class="fas fa-search"></i>
+            <span>البحث</span>
+        </a>
+        <a href="list-room-ar.html" class="mobile-nav-item">
+            <i class="fas fa-plus-circle"></i>
+            <span>إضافة</span>
+        </a>
+        <a href="messages-ar.html" class="mobile-nav-item">
+            <i class="fas fa-comments"></i>
+            <span>الرسائل</span>
+        </a>
+        <a href="profile-ar.html" class="mobile-nav-item">
+            <i class="fas fa-user"></i>
+            <span>حسابي</span>
+        </a>
+    </nav>
+
+    <!-- Search Container -->
+    <section class="search-container">
+        <div class="container">
+            <div class="search-header">
+                <h1 class="hero-title">ابحث عن <span class="text-primary">شريك سكن</span> (رجال)</h1>
+                <p class="search-subtitle">استخدم الفلاتر أدناه للعثور على شريك السكن المناسب لاحتياجاتك</p>
+            </div>
+            
+            <!-- Gender Selection -->
+            <div class="gender-selection-container mb-4">
+                <div class="gender-selection-label">اختر القسم:</div>
+                <div class="gender-selection-buttons">
+                    <button class="btn btn-primary gender-selector active" data-select-gender="male">
+                        <i class="fas fa-male"></i> قسم الرجال
+                    </button>
+                    <button class="btn btn-outline-primary gender-selector" data-select-gender="female">
+                        <i class="fas fa-female"></i> قسم النساء
+                    </button>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Filters Sidebar -->
+                <div class="col-lg-3">
+                    <div class="filter-sidebar">
+                        <h3 class="filter-title">فلاتر البحث</h3>
+                        
+                        <!-- Location Filter -->
+                        <div class="filter-group">
+                            <label class="filter-label">المدينة</label>
+                            <select class="form-control">
+                                <option value="" selected>جميع المدن</option>
+                                <option value="Riyadh">الرياض</option>
+                                <option value="Jeddah">جدة</option>
+                                <option value="Dammam">الدمام</option>
+                                <option value="Mecca">مكة</option>
+                                <option value="Medina">المدينة</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Price Range Filter -->
+                        <div class="filter-group">
+                            <label class="filter-label">نطاق السعر (ريال/شهر)</label>
+                            <div class="price-range">
+                                <input type="number" class="form-control price-input" placeholder="من" min="0">
+                                <span class="price-separator">-</span>
+                                <input type="number" class="form-control price-input" placeholder="إلى" min="0">
+                            </div>
+                        </div>
+                        
+                        <!-- Roommate Type Filter -->
+                        <div class="filter-group">
+                            <label class="filter-label">نوع شريك السكن</label>
+                            <div class="filter-options">
+                                <div class="filter-option">
+                                    <input type="checkbox" id="student" class="filter-checkbox">
+                                    <label for="student">طالب</label>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="professional" class="filter-checkbox">
+                                    <label for="professional">موظف</label>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="both" class="filter-checkbox">
+                                    <label for="both">كلاهما</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Age Range Filter -->
+                        <div class="filter-group">
+                            <label class="filter-label">الفئة العمرية</label>
+                            <div class="filter-options">
+                                <div class="filter-option">
+                                    <input type="checkbox" id="age18-24" class="filter-checkbox">
+                                    <label for="age18-24">18-24</label>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="age25-34" class="filter-checkbox">
+                                    <label for="age25-34">25-34</label>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="age35-44" class="filter-checkbox">
+                                    <label for="age35-44">35-44</label>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="age45plus" class="filter-checkbox">
+                                    <label for="age45plus">45+</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Lifestyle Filter -->
+                        <div class="filter-group">
+                            <label class="filter-label">نمط الحياة</label>
+                            <div class="filter-options">
+                                <div class="filter-option">
+                                    <input type="checkbox" id="nonsmoker" class="filter-checkbox">
+                                    <label for="nonsmoker">غير مدخن</label>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="quiet" class="filter-checkbox">
+                                    <label for="quiet">هادئ</label>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="social" class="filter-checkbox">
+                                    <label for="social">اجتماعي</label>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="clean" class="filter-checkbox">
+                                    <label for="clean">نظيف</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Availability Filter -->
+                        <div class="filter-group">
+                            <label class="filter-label">تاريخ التوفر</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        
+                        <button class="btn btn-primary btn-block mt-4">تطبيق الفلاتر</button>
+                        <button class="btn btn-outline-primary btn-block mt-2">إعادة ضبط</button>
+                    </div>
+                </div>
+                
+                <!-- Search Results -->
+                <div class="col-lg-9">
+                    <!-- Male Results -->
+                    <div class="male-content">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <p class="search-result-count">تم العثور على 15 شريك سكن محتمل</p>
+                            <div class="sort-options">
+                                <label class="sort-label">ترتيب حسب:</label>
+                                <select class="sort-select">
+                                    <option value="relevance">الأكثر صلة</option>
+                                    <option value="price_low">السعر: من الأقل إلى الأعلى</option>
+                                    <option value="price_high">السعر: من الأعلى إلى الأقل</option>
+                                    <option value="date_new">الأحدث</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <!-- Roommate Card 1 -->
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card">
+                                    <img src="images/illustrations/profile1.jpg" class="card-img-top" alt="أحمد">
+                                    <div class="card-body">
+                                        <h5 class="card-title">أحمد، 28</h5>
+                                        <p class="card-location"><i class="fas fa-map-marker-alt"></i> الرياض</p>
+                                        <p class="card-text">موظف يبحث عن شريك سكن هادئ. غير مدخن، نظيف ومنظم.</p>
+                                        <div class="card-amenities">
+                                            <span class="card-amenity"><i class="fas fa-ban"></i> ممنوع التدخين</span>
+                                            <span class="card-amenity"><i class="fas fa-briefcase"></i> موظف</span>
+                                        </div>
+                                        <a href="profile-details-ar.html" class="btn btn-outline-primary btn-block mt-3">عرض الملف الشخصي</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Roommate Card 2 -->
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card">
+                                    <img src="images/illustrations/profile2.jpg" class="card-img-top" alt="محمد">
+                                    <div class="card-body">
+                                        <h5 class="card-title">محمد، 24</h5>
+                                        <p class="card-location"><i class="fas fa-map-marker-alt"></i> جدة</p>
+                                        <p class="card-text">طالب في جامعة الملك عبد العزيز. يبحث عن شريك سكن قرب الحرم الجامعي.</p>
+                                        <div class="card-amenities">
+                                            <span class="card-amenity"><i class="fas fa-graduation-cap"></i> طالب</span>
+                                            <span class="card-amenity"><i class="fas fa-book"></i> دراسة هادئة</span>
+                                        </div>
+                                        <a href="profile-details-ar.html" class="btn btn-outline-primary btn-block mt-3">عرض الملف الشخصي</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Roommate Card 3 -->
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card">
+                                    <img src="images/illustrations/profile3.jpg" class="card-img-top" alt="خالد">
+                                    <div class="card-body">
+                                        <h5 class="card-title">خالد، 30</h5>
+                                        <p class="card-location"><i class="fas fa-map-marker-alt"></i> الدمام</p>
+                                        <p class="card-text">مهندس يعمل في صناعة النفط. نظيف، محترم، واجتماعي.</p>
+                                        <div class="card-amenities">
+                                            <span class="card-amenity"><i class="fas fa-hard-hat"></i> مهندس</span>
+                                            <span class="card-amenity"><i class="fas fa-users"></i> اجتماعي</span>
+                                        </div>
+                                        <a href="profile-details-ar.html" class="btn btn-outline-primary btn-block mt-3">عرض الملف الشخصي</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- More roommate cards... -->
+                        </div>
+                        
+                        <!-- Pagination -->
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                    <!-- Female Results -->
+                    <div class="female-content" style="display: none;">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <p class="search-result-count">تم العثور على 12 شريكة سكن محتملة</p>
+                            <div class="sort-options">
+                                <label class="sort-label">ترتيب حسب:</label>
+                                <select class="sort-select">
+                                    <option value="relevance">الأكثر صلة</option>
+                                    <option value="price_low">السعر: من الأقل إلى الأعلى</option>
+                                    <option value="price_high">السعر: من الأعلى إلى الأقل</option>
+                                    <option value="date_new">الأحدث</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <!-- Roommate Card 1 -->
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card">
+                                    <img src="images/illustrations/profile4.jpg" class="card-img-top" alt="سارة">
+                                    <div class="card-body">
+                                        <h5 class="card-title">سارة، 26</h5>
+                                        <p class="card-location"><i class="fas fa-map-marker-alt"></i> الرياض</p>
+                                        <p class="card-text">طالبة طب تبحث عن شريكة سكن. نظيفة، منظمة، ومجتهدة.</p>
+                                        <div class="card-amenities">
+                                            <span class="card-amenity"><i class="fas fa-user-md"></i> طب</span>
+                                            <span class="card-amenity"><i class="fas fa-book"></i> مجتهدة</span>
+                                        </div>
+                                        <a href="profile-details-ar.html" class="btn btn-outline-primary btn-block mt-3">عرض الملف الشخصي</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Roommate Card 2 -->
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card">
+                                    <img src="images/illustrations/profile5.jpg" class="card-img-top" alt="نورة">
+                                    <div class="card-body">
+                                        <h5 class="card-title">نورة، 29</h5>
+                                        <p class="card-location"><i class="fas fa-map-marker-alt"></i> جدة</p>
+                                        <p class="card-text">موظفة في قطاع المالية. تبحث عن شريكة سكن مسؤولة.</p>
+                                        <div class="card-amenities">
+                                            <span class="card-amenity"><i class="fas fa-briefcase"></i> موظفة</span>
+                                            <span class="card-amenity"><i class="fas fa-chart-line"></i> مالية</span>
+                                        </div>
+                                        <a href="profile-details-ar.html" class="btn btn-outline-primary btn-block mt-3">عرض الملف الشخصي</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Roommate Card 3 -->
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card">
+                                    <img src="images/illustrations/profile6.jpg" class="card-img-top" alt="أمل">
+                                    <div class="card-body">
+                                        <h5 class="card-title">أمل، 25</h5>
+                                        <p class="card-location"><i class="fas fa-map-marker-alt"></i> مكة</p>
+                                        <p class="card-text">معلمة تبحث عن شريكة سكن هادئة ومحترمة. تستمتع بالقراءة والطبخ.</p>
+                                        <div class="card-amenities">
+                                            <span class="card-amenity"><i class="fas fa-chalkboard-teacher"></i> معلمة</span>
+                                            <span class="card-amenity"><i class="fas fa-utensils"></i> طبخ</span>
+                                        </div>
+                                        <a href="profile-details-ar.html" class="btn btn-outline-primary btn-block mt-3">عرض الملف الشخصي</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- More roommate cards... -->
+                        </div>
+                        
+                        <!-- Pagination -->
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="images/logo/roomaity-logo-horizontal.svg" alt="روميتي" height="40" class="mb-3">
+                    <p>المنصة الرائدة للعثور على شركاء سكن في المملكة العربية السعودية مع ميزات مصممة خصيصاً للاحتياجات الثقافية المحلية.</p>
+                </div>
+                
+                <div class="col-md-2 mb-4">
+                    <h5 class="footer-title">روابط سريعة</h5>
+                    <ul class="footer-links">
+                        <li><a href="index-ar.html">الرئيسية</a></li>
+                        <li><a href="search-ar.html">ابحث عن شريك سكن</a></li>
+                        <li><a href="list-room-ar.html">أضف غرفتك</a></li>
+                        <li><a href="about-ar.html">كيف يعمل</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">اتصل بنا</h5>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope ml-2"></i> support@roomaity.sa</li>
+                        <li><i class="fas fa-phone ml-2"></i> +966 12 345 6789</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 روميتي (Roomaity). جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/gender-separation.js"></script>
+    <script src="js/gender-separation-test.js"></script>
+</body>
+</html>

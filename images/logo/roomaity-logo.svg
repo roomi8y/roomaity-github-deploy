@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- English Logo Text -->
+  <text x="10" y="30" font-family="Poppins, sans-serif" font-size="24" font-weight="700" fill="#FF5A5F">Roomaity</text>
+  
+  <!-- Arabic Logo Text -->
+  <text x="190" y="30" font-family="Tajawal, sans-serif" font-size="24" font-weight="700" fill="#FF5A5F" text-anchor="end">روميتي</text>
+  
+  <!-- House Icon -->
+  <path d="M100 15L85 25V45H115V25L100 15Z" fill="white" stroke="#FF5A5F" stroke-width="2"/>
+  
+  <!-- Door -->
+  <rect x="95" y="30" width="10" height="15" fill="#FF5A5F"/>
+  
+  <!-- Window -->
+  <rect x="90" y="25" width="5" height="5" fill="#00A699"/>
+  <rect x="105" y="25" width="5" height="5" fill="#00A699"/>
+</svg>
