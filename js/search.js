@@ -105,17 +105,52 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
         
-        // Get filter values
+        // Get filter values from form elements
         const city = document.getElementById('city')?.value || '';
-        const roomType = document.getElementById('roomType')?.value || '';
-        const priceMax = document.getElementById('priceRange')?.value || 10000;
-        const genderPreference = document.querySelector('input[name="genderPreference"]:checked')?.value || '';
+        const districtValue = document.getElementById('district')?.value; // Get value, might be ""
         
-        // Get amenities filters
+        // Price Range
+        const minPriceInput = document.getElementById('minPrice')?.value;
+        const maxPriceInput = document.getElementById('maxPrice')?.value;
+        // Parse to float only if input is not empty, otherwise null
+        const minPrice = minPriceInput ? parseFloat(minPriceInput) : null;
+        const maxPrice = maxPriceInput ? parseFloat(maxPriceInput) : null;
+
+        // Gender
+        const gender = document.querySelector('input[name="gender"]:checked')?.value || '';
+        
+        // Room Type
+        const roomType = document.querySelector('input[name="roomType"]:checked')?.value || '';
+        
+        // Bathroom
+        const bathroom = document.querySelector('input[name="bathroom"]:checked')?.value || '';
+        
+        // Furnished Status
+        const furnishedStatus = document.querySelector('input[name="furnishedStatus"]:checked')?.value || '';
+
+        // Amenities (Option 2: Read each checkbox individually by ID)
         const selectedAmenities = [];
-        document.querySelectorAll('input[name="amenities"]:checked').forEach(checkbox => {
-            selectedAmenities.push(checkbox.value);
-        });
+        if (document.getElementById('amenityWifi')?.checked) selectedAmenities.push('wifi');
+        // Corrected assumption for AC, HTML uses name="airConditioning", id="amenityAC"
+        // Assuming listing data uses 'airConditioning' or 'AC' for the amenity. Let's use 'AC' for consistency if data is flexible.
+        // If data has 'airConditioning', then push 'airConditioning'. If 'AC', push 'AC'.
+        // For now, let's assume the listing.amenities array will contain 'airConditioning' if AC is present.
+        if (document.getElementById('amenityAC')?.checked) selectedAmenities.push('airConditioning'); 
+        if (document.getElementById('amenityKitchen')?.checked) selectedAmenities.push('kitchen');
+        if (document.getElementById('amenityLaundry')?.checked) selectedAmenities.push('laundry');
+        if (document.getElementById('amenityParking')?.checked) selectedAmenities.push('parking');
+
+        // House Rules
+        // HTML value="false" for these rules means the user is selecting "No Smoking" or "No Pets".
+        // So, if ruleNoSmoking is checked, we want listings where noSmokingAllowed is true.
+        const noSmokingRuleActive = document.getElementById('ruleNoSmoking')?.checked; 
+        const noPetsRuleActive = document.getElementById('ruleNoPets')?.checked; 
+        
+        // Available From
+        const availableFrom = document.getElementById('availableFrom')?.value;
+
+        // Lease Length
+        const leaseLength = document.querySelector('input[name="leaseLength"]:checked')?.value || '';
         
         // Get sort option
         const sortBy = document.getElementById('sortBy')?.value || 'newest';
@@ -124,29 +159,83 @@ document.addEventListener('DOMContentLoaded', function() {
         let listings = JSON.parse(localStorage.getItem('roomaity_listings') || '[]');
         
         // Filter listings based on criteria
-        if (city) {
+        if (city) { // Filter only if a city is selected
             listings = listings.filter(listing => listing.city === city);
         }
+
+        if (districtValue && districtValue !== "") { // Filter only if a district is selected and not the "Select City First" or similar default empty value
+            listings = listings.filter(listing => listing.district === districtValue);
+        }
+
+        // Handle Price Range:
+        // Only filter if minPrice is a number and not null
+        if (minPrice !== null && !isNaN(minPrice)) {
+            listings = listings.filter(listing => listing.price >= minPrice);
+        }
+        // Only filter if maxPrice is a number and not null
+        if (maxPrice !== null && !isNaN(maxPrice)) {
+            listings = listings.filter(listing => listing.price <= maxPrice);
+        }
         
-        if (roomType) {
+        // Handle Gender:
+        // Filters if gender is "male" or "female". Empty string "" means "Any" and is not filtered.
+        if (gender) { 
+            listings = listings.filter(listing => listing.genderPreference === gender); // Assuming data field is genderPreference
+        }
+        
+        // Handle Room Type:
+        // Filters if roomType is "private" or "shared". Empty string "" means "Any".
+        if (roomType) { 
             listings = listings.filter(listing => listing.roomType === roomType);
         }
-        
-        if (priceMax) {
-            listings = listings.filter(listing => parseInt(listing.price) <= parseInt(priceMax));
+
+        // Handle Bathroom:
+        // Filters if bathroom is "private" or "shared". Empty string "" means "Any".
+        if (bathroom) { 
+            listings = listings.filter(listing => listing.bathroomType === bathroom); // Assuming data field is bathroomType
+        }
+
+        // Handle Furnished Status
+        if (furnishedStatus) { // Filters if a specific status is selected. Empty string "" means "Any".
+            listings = listings.filter(listing => listing.furnished === furnishedStatus); // Assuming data field is listing.furnished
         }
         
-        if (genderPreference) {
-            listings = listings.filter(listing => listing.genderPreference === genderPreference);
-        }
-        
+        // Handle Amenities:
         if (selectedAmenities.length > 0) {
             listings = listings.filter(listing => {
-                // Check if listing has all selected amenities
-                return selectedAmenities.every(amenity => 
-                    listing.amenities && listing.amenities.includes(amenity)
-                );
+                // Ensure listing.amenities exists and is an array
+                if (!listing.amenities || !Array.isArray(listing.amenities)) return false;
+                // Check if ALL selected amenities are present in the listing's amenities
+                return selectedAmenities.every(amenity => listing.amenities.includes(amenity));
             });
+        }
+
+        // Handle House Rules:
+        if (noSmokingRuleActive) { // User wants "No Smoking" listings
+            // Assuming listing.rules.noSmokingAllowed = true means it's a no-smoking place
+            listings = listings.filter(listing => listing.rules && listing.rules.noSmokingAllowed === true);
+        }
+        if (noPetsRuleActive) { // User wants "No Pets" listings
+            // Assuming listing.rules.noPetsAllowed = true means no pets are allowed
+            listings = listings.filter(listing => listing.rules && listing.rules.noPetsAllowed === true);
+        }
+
+        // Handle Available From:
+        if (availableFrom) { // Only filter if a date is selected
+            const filterDate = new Date(availableFrom);
+            // Set to midnight to compare dates correctly, ignoring time part of current day or filterDate
+            filterDate.setHours(0, 0, 0, 0); 
+            listings = listings.filter(listing => {
+                if (!listing.availableFrom) return false; // Skip if listing has no available date
+                const listingDate = new Date(listing.availableFrom);
+                listingDate.setHours(0,0,0,0); // Normalize listing date as well to compare dates only
+                return listingDate >= filterDate; // Listing is available on or after the filter date
+            });
+        }
+
+        // Handle Lease Length
+        if (leaseLength) { // Filters if a specific lease length is selected. Empty string "" means "Any".
+            listings = listings.filter(listing => listing.leaseTerm === leaseLength); // Assuming data field is listing.leaseTerm
         }
         
         // Sort listings
