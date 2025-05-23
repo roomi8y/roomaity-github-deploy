@@ -119,15 +119,43 @@
                         <label>الجنس</label>
                         <div class="gender-options">
                             <div class="gender-option">
-                                <input type="radio" id="male" name="gender" value="male" required>
+                                <input type="radio" id="male" name="gender" value="male" required> <!-- Gender is still required -->
                                 <label for="male">ذكر</label>
                             </div>
                             <div class="gender-option">
-                                <input type="radio" id="female" name="gender" value="female" required>
+                                <input type="radio" id="female" name="gender" value="female" required> <!-- Gender is still required -->
                                 <label for="female">أنثى</label>
                             </div>
                         </div>
                         <div id="genderError" class="error-message"></div>
+                    </div>
+
+                    <!-- Phone Number (Optional) -->
+                    <div class="form-group">
+                        <label for="phone">رقم الجوال (اختياري)</label>
+                        <div class="input-group">
+                             <div class="input-group-prepend">
+                                <span class="input-group-text">+966</span>
+                            </div>
+                            <input type="tel" id="phone" class="form-control" placeholder="5XXXXXXXX">
+                        </div>
+                        <div id="phoneError" class="error-message"></div>
+                    </div>
+                    
+                    <!-- User Type (Optional) -->
+                    <div class="form-group">
+                        <label>أنا: (اختياري)</label>
+                        <div class="gender-options"> <!-- Re-using gender-options for similar styling if applicable -->
+                            <div class="gender-option">
+                                <input type="radio" id="lookingForRoomAr" name="userType" value="looking">
+                                <label for="lookingForRoomAr">أبحث عن غرفة</label>
+                            </div>
+                            <div class="gender-option">
+                                <input type="radio" id="offeringRoomAr" name="userType" value="offering">
+                                <label for="offeringRoomAr">أعرض غرفة</label>
+                            </div>
+                        </div>
+                         <div id="userTypeError" class="error-message"></div>
                     </div>
                     
                     <div class="form-group form-check">

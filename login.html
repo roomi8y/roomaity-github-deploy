@@ -60,83 +60,34 @@
                         <div class="card-body p-4">
                             <h2 class="text-center mb-4">Welcome Back</h2>
                             
-                            <!-- Gender Selection Tabs -->
-                            <div class="gender-tabs mt-4 mb-4">
-                                <ul class="nav nav-pills nav-fill mb-3" id="genderTabs" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="male-tab" data-toggle="pill" data-target="#male-content" type="button" role="tab" aria-controls="male-content" aria-selected="true">
-                                            <i class="fas fa-male text-male"></i> Male Section
-                                        </button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="female-tab" data-toggle="pill" data-target="#female-content" type="button" role="tab" aria-controls="female-content" aria-selected="false">
-                                            <i class="fas fa-female text-female"></i> Female Section
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
+                            <h2 class="text-center mb-4">Welcome Back</h2>
                             
-                            <div class="tab-content" id="genderTabsContent">
-                                <!-- Male Login Form -->
-                                <div class="tab-pane fade show active" id="male-content" role="tabpanel" aria-labelledby="male-tab">
-                                    <form id="loginFormMale" class="needs-validation" novalidate>
-                                        <input type="hidden" name="gender" value="male">
-                                        <div class="form-group">
-                                            <label for="loginEmailMale" class="form-label">Email Address</label>
-                                            <input type="email" class="form-control" id="loginEmailMale" name="email" required>
-                                            <div class="invalid-feedback">Please enter a valid email address</div>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <label for="loginPasswordMale" class="form-label">Password</label>
-                                            <input type="password" class="form-control" id="loginPasswordMale" name="password" required>
-                                            <div class="invalid-feedback">Please enter your password</div>
-                                        </div>
-                                        
-                                        <div class="form-group d-flex justify-content-between align-items-center">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="rememberMeMale">
-                                                <label class="form-check-label" for="rememberMeMale">
-                                                    Remember me
-                                                </label>
-                                            </div>
-                                            <a href="forgot-password.html" class="text-primary">Forgot password?</a>
-                                        </div>
-                                        
-                                        <button type="submit" class="btn btn-primary btn-block btn-lg mt-4">Sign In</button>
-                                    </form>
+                            <form id="loginForm" class="auth-form"> <!-- Use auth-form class if styles apply -->
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                                    <div id="emailError" class="error-message"></div> <!-- For JS validation messages -->
                                 </div>
                                 
-                                <!-- Female Login Form -->
-                                <div class="tab-pane fade" id="female-content" role="tabpanel" aria-labelledby="female-tab">
-                                    <form id="loginFormFemale" class="needs-validation" novalidate>
-                                        <input type="hidden" name="gender" value="female">
-                                        <div class="form-group">
-                                            <label for="loginEmailFemale" class="form-label">Email Address</label>
-                                            <input type="email" class="form-control" id="loginEmailFemale" name="email" required>
-                                            <div class="invalid-feedback">Please enter a valid email address</div>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <label for="loginPasswordFemale" class="form-label">Password</label>
-                                            <input type="password" class="form-control" id="loginPasswordFemale" name="password" required>
-                                            <div class="invalid-feedback">Please enter your password</div>
-                                        </div>
-                                        
-                                        <div class="form-group d-flex justify-content-between align-items-center">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="rememberMeFemale">
-                                                <label class="form-check-label" for="rememberMeFemale">
-                                                    Remember me
-                                                </label>
-                                            </div>
-                                            <a href="forgot-password.html" class="text-primary">Forgot password?</a>
-                                        </div>
-                                        
-                                        <button type="submit" class="btn btn-primary btn-block btn-lg mt-4">Sign In</button>
-                                    </form>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <div class="password-input-container"> <!-- Optional: if you want to add pass toggle later -->
+                                        <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                                        <!-- Add password toggle button here if desired, similar to login-ar.html -->
+                                    </div>
+                                    <div id="passwordError" class="error-message"></div> <!-- For JS validation messages -->
                                 </div>
-                            </div>
+                                
+                                <div class="form-group d-flex justify-content-between align-items-center"> <!-- Adjusted class for layout -->
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                                    </div>
+                                    <a href="reset-password.html" class="text-primary">Forgot password?</a> <!-- Changed from forgot-password.html -->
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary btn-block btn-lg mt-4">Sign In</button>
+                            </form>
                             
                             <div class="text-center mt-4">
                                 <p>Don't have an account? <a href="register.html">Sign up</a></p>
@@ -208,5 +159,6 @@
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
 </body>
 </html>

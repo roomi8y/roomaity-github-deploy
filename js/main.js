@@ -19,18 +19,41 @@ document.addEventListener('DOMContentLoaded', function() {
             const currentLang = document.documentElement.getAttribute('lang');
             const currentDir = document.documentElement.getAttribute('dir');
             
+            const currentPageName = window.location.pathname.split('/').pop();
             if (currentLang === 'en') {
                 // Switch to Arabic
                 document.documentElement.setAttribute('lang', 'ar');
                 document.documentElement.setAttribute('dir', 'rtl');
                 languageToggle.innerHTML = '<i class="fas fa-globe"></i> English';
-                translateToArabic();
+                if (currentPageName === 'login.html') {
+                    window.location.href = 'login-ar.html';
+                } else if (currentPageName === 'register.html') {
+                    window.location.href = 'register-ar.html';
+                } else if (currentPageName === 'reset-password.html') {
+                    window.location.href = 'reset-password-ar.html';
+                } else if (currentPageName === 'index.html') { 
+                    window.location.href = 'index-ar.html';
+                }
+                // else { // For other pages, if you have a generic translation function
+                //    translateToArabic();
+                // }
             } else {
                 // Switch to English
                 document.documentElement.setAttribute('lang', 'en');
                 document.documentElement.setAttribute('dir', 'ltr');
                 languageToggle.innerHTML = '<i class="fas fa-globe"></i> العربية';
-                translateToEnglish();
+                if (currentPageName === 'login-ar.html') {
+                    window.location.href = 'login.html';
+                } else if (currentPageName === 'register-ar.html') {
+                    window.location.href = 'register.html';
+                } else if (currentPageName === 'reset-password-ar.html') {
+                    window.location.href = 'reset-password.html';
+                } else if (currentPageName === 'index-ar.html') { 
+                    window.location.href = 'index.html';
+                }
+                // else { // For other pages, if you have a generic translation function
+                //    translateToEnglish();
+                // }
             }
         });
     }

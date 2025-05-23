@@ -59,7 +59,7 @@
                         <div class="card-body p-4">
                             <h2 class="text-center mb-4">Create Your Account</h2>
                             
-                            <form id="registrationForm" class="needs-validation" novalidate>
+                            <form id="registerForm" class="needs-validation" novalidate>
                                 <div class="form-group">
                                     <label class="form-label">Gender</label>
                                     <div class="d-flex">
@@ -96,10 +96,10 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">+966</span>
                                         </div>
-                                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="5XXXXXXXX" required>
+                                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="5XXXXXXXX">
                                     </div>
                                     <div class="invalid-feedback">Please enter a valid Saudi phone number</div>
-                                    <small class="form-text text-muted">Your phone number will be verified via SMS</small>
+                                    <small class="form-text text-muted">Your phone number will be verified via SMS (Optional)</small>
                                 </div>
                                 
                                 <div class="form-group">
@@ -117,16 +117,16 @@
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label class="form-label">I am:</label>
+                                    <label class="form-label">I am: (Optional)</label>
                                     <div class="d-flex">
                                         <div class="form-check mr-4">
-                                            <input class="form-check-input" type="radio" name="userType" id="lookingForRoom" value="looking" required>
+                                            <input class="form-check-input" type="radio" name="userType" id="lookingForRoom" value="looking">
                                             <label class="form-check-label" for="lookingForRoom">
                                                 Looking for a room
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="userType" id="offeringRoom" value="offering" required>
+                                            <input class="form-check-input" type="radio" name="userType" id="offeringRoom" value="offering">
                                             <label class="form-check-label" for="offeringRoom">
                                                 Offering a room
                                             </label>
@@ -136,8 +136,8 @@
                                 
                                 <div class="form-group">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="termsAgreement" required>
-                                        <label class="form-check-label" for="termsAgreement">
+                                        <input class="form-check-input" type="checkbox" id="terms" required>
+                                        <label class="form-check-label" for="terms">
                                             I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>
                                         </label>
                                         <div class="invalid-feedback">You must agree to the terms to continue</div>
@@ -217,5 +217,6 @@
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
 </body>
 </html>
