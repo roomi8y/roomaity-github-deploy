@@ -612,6 +612,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         if (profileData) {
+            const user = JSON.parse(localStorage.getItem('roomaity_user') || '{"isLoggedIn": false}');
+            let emailVerificationHtml = '';
+            if (!profileId && user && user.isLoggedIn) {
+                const isArabic = document.documentElement.lang === 'ar';
+                const accDetailsTitle = isArabic ? 'تفاصيل الحساب' : 'Account Details';
+                const emailLabel = isArabic ? 'البريد الإلكتروني:' : 'Email:';
+                const statusLabel = isArabic ? 'الحالة:' : 'Status:';
+                const naText = isArabic ? 'غير متاح' : 'N/A';
+                const loadingText = isArabic ? 'جاري التحميل...' : 'Loading...';
+                const resendButtonText = isArabic ? 'إعادة إرسال رسالة التحقق' : 'Resend Verification Email';
+                const manualVerifyButtonText = isArabic ? 'تحقق يدوي (للمطور)' : 'Manually Verify (Dev)';
+
+                emailVerificationHtml = `
+                <div class="profile-section email-verification-section">
+                    <h2 class="section-title">${accDetailsTitle}</h2>
+                    <p><strong>${emailLabel}</strong> <span id="profileUserEmail">${profileData.email || naText}</span></p>
+                    <p><strong>${statusLabel}</strong> <span id="emailVerificationStatus">${loadingText}</span></p>
+                    <button class="btn btn-sm btn-secondary" id="resendVerificationEmailBtn" style="display:none;">${resendButtonText}</button>
+                    <button class="btn btn-sm btn-warning" id="devManuallyVerifyEmailBtn" style="display:none; margin-left: 10px;">${manualVerifyButtonText}</button>
+                </div>
+                `;
+            }
+
             // Render profile data
             profileViewContainer.innerHTML = `
                 <div class="profile-header">
@@ -634,7 +657,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h2 class="section-title">${document.documentElement.lang === 'ar' ? 'نبذة عني' : 'About Me'}</h2>
                     <p class="profile-bio">${profileData.bio}</p>
                 </div>
-                
+                ${emailVerificationHtml}
                 <div class="profile-section">
                     <h2 class="section-title">${document.documentElement.lang === 'ar' ? 'نمط الحياة' : 'Lifestyle'}</h2>
                     

@@ -75,6 +75,16 @@
     <section class="profile-section">
         <div class="container">
             <div id="profileViewContainer" class="profile-container">
+                <!-- Static Email Verification Section -->
+                <div class="profile-section card mb-4"> 
+                    <div class="card-body">
+                        <h2 class="card-title">التحقق من الحساب</h2>
+                        <p><strong>البريد الإلكتروني:</strong> <span id="profileUserEmail">(سيتم عرض البريد الإلكتروني هنا)</span></p>
+                        <p><strong>الحالة:</strong> <span id="emailVerificationStatus">جاري تحميل الحالة...</span></p>
+                        <button class="btn btn-sm btn-secondary" id="resendVerificationEmailBtn" style="display:none;">إعادة إرسال رسالة التحقق</button>
+                        <button class="btn btn-sm btn-warning" id="devManuallyVerifyEmailBtn" style="display:none; margin-right: 10px;">تحقق يدوي (للمطور)</button>
+                    </div>
+                </div>
                 <!-- Profile content will be populated by JavaScript -->
                 <div class="loading-spinner">
                     <i class="fas fa-spinner fa-spin fa-3x"></i>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Profile - Roomaity</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/mobile-enhanced.css">
+    <link rel="stylesheet" href="css/gender-separation.css">
+    <link rel="stylesheet" href="css/mobile-fixes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/logo/roomaity-icon.svg">
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header class="navbar fixed-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="images/logo/roomaity-logo-horizontal.svg" alt="Roomaity Logo" height="40">
+            </a>
+            
+            <button class="navbar-toggler d-lg-none" type="button" id="navbarToggler" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ml-auto d-flex flex-row">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="search.html" class="nav-link">Find Roommate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="list-room.html" class="nav-link">List Your Room</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">How It Works</a>
+                    </li>
+                    <li class="nav-item ml-3 login-button">
+                        <a href="login.html" class="btn btn-outline-primary">Login</a>
+                    </li>
+                    <li class="nav-item ml-2 register-button">
+                        <a href="register.html" class="btn btn-primary">Sign Up</a>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <button class="language-switcher" id="languageToggle">
+                            <i class="fas fa-globe"></i> العربية
+                        </button>
+                    </li>
+                    <!-- User menu (hidden by default, shown when logged in) -->
+                    <li class="nav-item dropdown user-menu" style="display: none;">
+                        <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user-circle"></i> <span class="user-name">User Name</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="profile.html">Profile</a>
+                            <a class="dropdown-item" href="messages.html">Messages</a>
+                            <a class="dropdown-item" href="my-listings.html">My Listings</a>
+                            <a class="dropdown-item" href="settings.html">Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item logout-button" href="#">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Profile View Section -->
+    <section class="profile-section">
+        <div class="container">
+            <div id="profileViewContainer" class="profile-container">
+                <!-- Profile content will be populated by JavaScript -->
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin fa-3x"></i>
+                    <p>Loading profile...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="images/logo/roomaity-logo-horizontal.svg" alt="Roomaity" height="40" class="mb-3">
+                    <p>The leading platform for finding roommates in Saudi Arabia with features tailored to local cultural needs.</p>
+                </div>
+                
+                <div class="col-md-2 mb-4">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="search.html">Find Roommate</a></li>
+                        <li><a href="list-room.html">List Your Room</a></li>
+                        <li><a href="about.html">How It Works</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">Contact Us</h5>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope mr-2"></i> support@roomaity.sa</li>
+                        <li><i class="fas fa-phone mr-2"></i> +966 12 345 6789</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Roomaity. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/listing-profile.js"></script>
+    <!-- Inline script for mobile menu toggle, specific dropdowns, etc. can remain if not handled by main.js -->
+    <!-- The main language toggle is handled by js/main.js via id="languageToggle" in the header -->
+    <script>
+        // Toggle mobile menu
+        // This might be redundant if main.js already handles it globally via the ID
+        const navbarToggler = document.getElementById('navbarToggler');
+        const navbarMenu = document.getElementById('navbarMenu');
+        if (navbarToggler && navbarMenu) {
+            navbarToggler.addEventListener('click', function() {
+                navbarMenu.classList.toggle('show');
+            });
+        }
+        
+        // Dropdown functionality (if any specific to this page and not in main.js)
+        // This might be redundant if main.js already handles it globally
+        // document.querySelectorAll('.dropdown-toggle').forEach(function(dropdown) {
+        //     dropdown.addEventListener('click', function(e) {
+        //         e.preventDefault();
+        //         const dropdownMenu = this.nextElementSibling;
+        //         dropdownMenu.classList.toggle('show');
+                
+        //         document.addEventListener('click', function closeDropdown(event) {
+        //             if (!event.target.closest('.dropdown')) {
+        //                 dropdownMenu.classList.remove('show');
+        //                 document.removeEventListener('click', closeDropdown);
+        //             }
+        //         });
+        //     });
+        // });
+    </script>
+</body>
+</html>

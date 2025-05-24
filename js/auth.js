@@ -174,6 +174,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // Set gender preference based on user gender
             localStorage.setItem('roomaityGenderPreference', gender);
             
+            // Simulate email verification process initiation
+            localStorage.setItem('roomaity_user_email_verified', 'false');
+            localStorage.setItem('roomaity_pending_verification_email', email); 
+            // Log for developer confirmation (optional, can be removed later)
+            console.log('Email verification pending for: ' + email); 
+            
             // Redirect to dashboard
             window.location.href = document.documentElement.lang === 'ar' ? 'index-ar.html' : 'index.html';
         }, 1500);
